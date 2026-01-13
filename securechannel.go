@@ -73,7 +73,7 @@ func StartSecureChannel(remote_ip net.IP, remote_port, local_port int) (SecureCh
 	}
 	return SecureChannel{
 		Udp:     udp,
-		Counter: uint32(rand.Intn(0xffffffff)),
+		Counter: rand.Uint32(),
 	}, nil
 }
 

@@ -20,7 +20,7 @@ func Spake2pExchange(pin int, udp *udpChannel) (SecureChannel, error) {
 	secure_channel := SecureChannel{
 		Udp:     udp,
 		session: 0,
-		Counter: uint32(randm.Intn(0xffffffff)),
+		Counter: randm.Uint32(),
 	}
 
 	pbkdf_request := pBKDFParamRequest(exchange)
